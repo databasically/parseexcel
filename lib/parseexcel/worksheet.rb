@@ -65,8 +65,9 @@ module Spreadsheet
 						ydays = year_days(year)
 					end
 					month = 1
-					1.upto(12) { |month|
-						mdays = month_days(month, year)
+					1.upto(12) { |mon|
+            month = mon
+						mdays = month_days(mon, year)
 						break if(date <= mdays)
 						date -= mdays
 					}
