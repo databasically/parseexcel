@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 # TestParser -- Spreadsheet -- 02.06.2003 -- hwyss@ywesee.com 
 
 $: << File.expand_path("../lib", File.dirname(__FILE__))
@@ -578,6 +579,7 @@ class TestParser < Test::Unit::TestCase
 		assert_equal([0,9,8], format.fill)
 	end
 end
+
 class TestParser2 < Test::Unit::TestCase
 	def setup
 		@parser = Spreadsheet::ParseExcel::Parser.new
@@ -644,7 +646,8 @@ class TestParser2 < Test::Unit::TestCase
 		sheet = book.worksheet(0)
 		cell0 = sheet.cell(0,0)
 		assert_equal('WINDOWS-1252', cell0.encoding)
-		assert_equal('ä', cell0.to_s('latin1'))
+# 		assert_equal('ä', cell0.to_s('latin1'))
+		assert_equal("\xE4", cell0.to_s('latin1'))
 	end
 	def test_file_umlaut__biff8
 		source = File.expand_path('data/umlaut.biff8.xls', File.dirname(__FILE__))
@@ -655,7 +658,8 @@ class TestParser2 < Test::Unit::TestCase
 		sheet = book.worksheet(0)
 		cell0 = sheet.cell(0,0)
 		assert_equal('UTF-16LE', cell0.encoding)
-		assert_equal('ä', cell0.to_s('latin1'))
+# 		assert_equal('ä', cell0.to_s('latin1'))
+		assert_equal("\xE4", cell0.to_s('latin1'))
 	end
 	def test_file_uncompressed_str
 		source = File.expand_path('data/uncompressed.str.xls', File.dirname(__FILE__))
