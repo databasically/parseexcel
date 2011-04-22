@@ -1,9 +1,16 @@
 Spreadsheet::ParseExcel - Get information from an Excel file.
-============
-Version: 0.5.2
-Date: 2007-07-19
 
-Short Description:
+============
+Version: 0.5.3
+Date: 2011-04-22
+
+Short Description: 
+This is databasically's version of the parseexcel gem and is not actively maintained as the original gem is no longer maintained. This version was created to resolve a bug reading Unicode characters. The resulting error is as follows:
+
+  undefined method `&' for "\x00":String
+
+This version of the library resolves this error.
+
 Spreadsheet::ParseExcel allows you to get information out of a 
 simple Excel file
 This Package is an - as of today incomplete - translation of 
