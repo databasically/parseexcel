@@ -840,7 +840,8 @@ module Spreadsheet
 						@buff << work[1..-1]
 					#1.3 Diff code (Unicode or ASCII)
 					else
-						if(ibool(cnt1st & 0x01))
+# 						if(ibool(cnt1st & 0x01))
+						if(ibool(cnt1st.bytes.first & 0x01))
 							dum, gr = @buff.unpack('vc')
 							@buff[2,1] = [gr | 0x01].pack('c')
 							(lenb-stp).downto(1) { |idx|
