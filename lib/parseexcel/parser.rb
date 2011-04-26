@@ -883,8 +883,9 @@ module Spreadsheet
 				if(ptn == 0)
 					res, = ((@bigendian) ? swk + null : null + lwk).unpack('d')
 				elsif(ptn == 1)
-					swk[3] &= [(swk[3,1].unpack('c').first & 0xFC)].pack('c')[0]
-					lwk[0] &= [(lwk[0,1].unpack('c').first & 0xFC)].pack('c')[0]
+
+					swk[3] &&= [(swk[3,1].unpack('c').first & 0xFC)].pack('c')[0]
+					lwk[0] &&= [(lwk[0,1].unpack('c').first & 0xFC)].pack('c')[0]
 					res = ((@bigendian) ? swk + null : null + lwk).unpack('d').first.to_f / 100.0
 				elsif(ptn == 2)
 					bin, = swk.unpack('B32')
