@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name        = "parseexcel"
-  s.version     = 0.5.3
+  s.version     = "0.5.3"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Databasically"]
   s.email       = ["wes@databasically.com"]
