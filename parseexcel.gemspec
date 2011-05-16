@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
+require File.expand_path("../lib/parseexcel/version", __FILE__)
+
 Gem::Specification.new do |s|
   s.name        = "parseexcel"
-  s.version     = "0.5.3"
+  s.version     = Spreadsheet::ParseExcel::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Databasically"]
   s.email       = ["wes@databasically.com"]
